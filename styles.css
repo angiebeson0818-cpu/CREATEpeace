@@ -539,16 +539,9 @@ h1, h2, h3, h4, h5, .serif {
   border-radius: 1.5rem;
   padding: 2.5rem 2rem;
   text-align: center;
-  transition: border-color 0.4s ease, transform 0.4s ease;
+  transition: border-color 0.4s ease, transform 0.4s ease, opacity 0.6s ease;
   position: relative;
   z-index: 1;
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-.process-card.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .process-card:hover {
@@ -838,14 +831,7 @@ h1, h2, h3, h4, h5, .serif {
   display: flex;
   gap: 2rem;
   padding: 2rem 0;
-  opacity: 0;
-  transform: translateX(-20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.roadmap-step.visible {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .roadmap-dot {
@@ -1056,14 +1042,32 @@ h1, h2, h3, h4, h5, .serif {
 }
 
 /* ── 17. SCROLL ANIMATIONS (IntersectionObserver) ────────── */
+/* Default: visible. JS adds .js-loaded to <html> before hiding elements */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s var(--ease-luxury), transform 0.8s var(--ease-luxury);
-}
-.reveal.visible {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.8s var(--ease-luxury), transform 0.8s var(--ease-luxury);
+}
+/* Only hide if JS has confirmed it loaded successfully */
+.js-loaded .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.js-loaded .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Process cards — always visible by default */
+.process-card {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Roadmap steps — always visible by default */
+.roadmap-step {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 
 /* ── 18. RESPONSIVE ──────────────────────────────────────── */
