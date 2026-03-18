@@ -1,0 +1,70 @@
+{
+  "_comment": "angieCREATEs — Positive Peace in Your Heart | content.json",
+  "_note": "This file is the single source of truth for publication metadata. It is referenced by app.js for dynamic title injection and future CMS integration.",
+
+  "publication": {
+    "title": "Positive Peace in Your Heart",
+    "brand": "angieCREATEs",
+    "phonetic_brand": "angie-CREE-ATES",
+    "aesthetic": "Onyx — Imperfect by Design",
+    "year": 2026,
+    "url": "https://angiecreates.pro",
+
+    "theme": {
+      "onyx":       "#1A1A1A",
+      "gold":       "#C9A84C",
+      "gold_light": "#D4AF37",
+      "cream":      "#FDF8F0",
+      "white":      "#FFFFFF"
+    },
+
+    "sections": [
+      {
+        "id":      "hero",
+        "title":   "Positive Peace in Your Heart",
+        "tagline": "Experience the power of stillness"
+      },
+      {
+        "id":      "process",
+        "title":   "The CREATE Process",
+        "tagline": "From Keyword to Commercial-Grade Publication"
+      },
+      {
+        "id":      "emotional",
+        "title":   "Untangling the Heart",
+        "focus":   "Mood awareness and mindset shifts",
+        "interactive": "mood-tracker"
+      },
+      {
+        "id":      "physical",
+        "title":   "Breath, Body & Spirit",
+        "focus":   "Hydration, movement, and intentional rest",
+        "interactive": "breathing-widget"
+      },
+      {
+        "id":      "roadmap",
+        "title":   "The Peace Roadmap",
+        "focus":   "5-step integration plan — emotional, physical, spiritual"
+      }
+    ],
+
+    "cta": {
+      "label":    "Instant Download",
+      "license":  "View License",
+      "hub_url":  "https://angiecreates.pro"
+    },
+
+    "audio": {
+      "title":  "Heart Centering Session",
+      "label":  "Guided Meditation",
+      "src":    "https://v3b.fal.media/files/b/0a89e52f/Ap2IrELk8srEqT-1mP-Vl_speech_corrected.mp3"
+    },
+
+    "social": {
+      "instagram": "https://instagram.com/angiecreates",
+      "pinterest":  "https://pinterest.com/angiecreates",
+      "tiktok":     "https://tiktok.com/@angiecreates",
+      "youtube":    "https://youtube.com/@angiecreates"
+    }
+  }
+}

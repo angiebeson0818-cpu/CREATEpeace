@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- ── SEO Meta (was missing entirely) ── -->
+  <title>Positive Peace in Your Heart | angieCREATEs Digital Publication</title>
+  <meta name="description" content="An interactive digital publication by angieCREATEs. Experience the transformative power of stillness through guided meditation, mood tracking, and a full peace roadmap.">
+  <meta name="author" content="angieCREATEs">
+  <meta name="theme-color" content="#1A1A1A">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Positive Peace in Your Heart | angieCREATEs">
+  <meta property="og:description" content="Interactive digital publication — stillness, clarity, and your upgrade journey.">
+  <meta property="og:image"       content="https://r2-bucket.flowith.net/f/092a98dacbf1bbcc/positive_peace_digital_magazine_mockup_index_1%404096x2286.jpeg">
+  <meta property="og:url"         content="https://angiecreates.pro">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Positive Peace in Your Heart | angieCREATEs">
+  <meta name="twitter:description" content="Interactive digital publication by angieCREATEs.">
+  <meta name="twitter:image"       content="https://r2-bucket.flowith.net/f/092a98dacbf1bbcc/positive_peace_digital_magazine_mockup_index_1%404096x2286.jpeg">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://angiecreates.pro">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- External Libraries (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════════════════
+       MOBILE NAV DRAWER (FIX: was missing entirely)
+  ═══════════════════════════════════════════════════════ -->
+  <nav id="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button id="mobile-nav-close" aria-label="Close menu">&times;</button>
+    <a href="#process">The Process</a>
+    <a href="#emotional">Emotional</a>
+    <a href="#physical">Physical</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#cta-section" style="color: var(--gold);">Get It Now</a>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════════════════ -->
+  <header id="site-header" role="banner">
+    <a href="/" class="header-logo" aria-label="angieCREATEs home">
+      <img
+        src="https://r2-bucket.flowith.net/f/72514915319a9226/create_brand_logo_design_index_0%402048x2048.jpeg"
+        alt="angieCREATEs logo"
+        width="36" height="36"
+        loading="eager"
+      >
+      <span class="header-logo-text">CREATE</span>
+    </a>
+
+    <nav aria-label="Primary navigation">
+      <ul class="header-nav">
+        <li><a href="#process">The Process</a></li>
+        <li><a href="#emotional">Emotional</a></li>
+        <li><a href="#physical">Physical</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <a href="#cta-section" class="btn-primary">Upgrade Now</a>
+      <!-- FIX: Mobile menu button now wired to #mobile-nav drawer in app.js -->
+      <button id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <i data-lucide="menu" style="width:1.1rem;height:1.1rem;"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       PAGE DOT NAVIGATION
+  ═══════════════════════════════════════════════════════ -->
+  <nav id="page-dots" aria-label="Section progress indicators">
+    <div class="page-dot active" title="Hero"></div>
+    <div class="page-dot" title="Process"></div>
+    <div class="page-dot" title="Emotional"></div>
+    <div class="page-dot" title="Physical"></div>
+    <div class="page-dot" title="Roadmap"></div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════
+       AUDIO PANEL
+  ═══════════════════════════════════════════════════════ -->
+  <div id="audio-panel" role="region" aria-label="Guided meditation audio">
+    <button id="audio-toggle" aria-label="Play guided meditation">
+      <!-- Icons toggled in app.js -->
+      <i data-lucide="play"  id="play-icon"  style="width:1.1rem;height:1.1rem;margin-left:2px;"></i>
+      <i data-lucide="pause" id="pause-icon" style="width:1.1rem;height:1.1rem;display:none;"></i>
+    </button>
+    <div class="audio-label">
+      <p>Guided Meditation</p>
+      <p>Heart Centering Session</p>
+    </div>
+    <audio id="bg-audio" loop preload="none">
+      <source src="https://v3b.fal.media/files/b/0a89e52f/Ap2IrELk8srEqT-1mP-Vl_speech_corrected.mp3" type="audio/mpeg">
+      Your browser does not support audio playback.
+    </audio>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- ── 1. HERO ─────────────────────────────────────────── -->
+    <section id="hero" aria-labelledby="hero-heading">
+      <!-- Background video with poster fallback -->
+      <video
+        id="hero-video"
+        autoplay muted loop playsinline
+        poster="https://r2-bucket.flowith.net/f/092a98dacbf1bbcc/positive_peace_digital_magazine_mockup_index_1%404096x2286.jpeg"
+        aria-hidden="true"
+      >
+        <source src="https://v3b.fal.media/files/b/0a89e53f/rYFCdRHaNssO3Raep3Pqz_output.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="hero-byline">A Digital Publication by <strong>angieCREATEs</strong></p>
+        <h1 id="hero-heading" class="serif">
+          Positive Peace<br>
+          <em>in Your Heart</em>
+        </h1>
+        <p class="hero-sub">
+          Experience the power of stillness through interactive multimedia — your upgrade starts here.
+        </p>
+        <div class="hero-scroll-indicator" aria-hidden="true">
+          <div class="hero-scroll-line"></div>
+          <span class="hero-scroll-text">Scroll to begin</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 2. THE CREATE PROCESS ──────────────────────────── -->
+    <section id="process" class="section" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow">How It Works</p>
+          <div class="gold-divider"></div>
+          <h2 id="process-heading" class="serif">The CREATE Process</h2>
+          <p>From Keyword to Commercial-Grade Publication</p>
+        </div>
+
+        <div class="process-grid">
+          <!-- Card 1 -->
+          <article class="process-card">
+            <div class="process-icon">
+              <i data-lucide="layout" style="width:1.75rem;height:1.75rem;"></i>
+            </div>
+            <p class="process-number">01</p>
+            <h3>Choose Type</h3>
+            <p>Select from 100+ professional templates — Magazines, Flip PDFs, or interactive Lookbooks — built for your niche.</p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="process-card">
+            <div class="process-icon">
+              <i data-lucide="sparkles" style="width:1.75rem;height:1.75rem;"></i>
+            </div>
+            <p class="process-number">02</p>
+            <h3>AI Generation</h3>
+            <p>Enter a keyword or URL. AI builds your content, layouts, and visuals in under 60 seconds. You edit, you own it.</p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="process-card">
+            <div class="process-icon">
+              <i data-lucide="globe" style="width:1.75rem;height:1.75rem;"></i>
+            </div>
+            <p class="process-number">03</p>
+            <h3>Publish &amp; Profit</h3>
+            <p>Export as an interactive link or digital download. Commercial license included — sell it, gift it, keep it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 3. EMOTIONAL — Untangling the Heart ───────────── -->
+    <section id="emotional" class="section" aria-labelledby="emotional-heading">
+      <div class="container">
+        <div class="two-col">
+          <!-- Image -->
+          <div class="imperfect-frame">
+            <img
+              src="https://r2-bucket.flowith.net/f/092a98dacbf1bbcc/positive_peace_digital_magazine_mockup_index_1%404096x2286.jpeg"
+              alt="Positive Peace digital magazine spread"
+              loading="lazy"
+              width="800" height="600"
+            >
+          </div>
+
+          <!-- Content -->
+          <div class="content-block">
+            <p class="eyebrow reveal">Emotional Upgrade</p>
+            <div class="gold-divider"></div>
+            <h2 id="emotional-heading" class="serif reveal">Untangling<br>the Heart</h2>
+            <p class="reveal">
+              Begin by identifying the raw thoughts — the noise that blocks clarity. Use the interactive tracker below to map where you are right now.
+            </p>
+
+            <!-- Mood Tracker Interactive Element -->
+            <div id="mood-tracker" role="group" aria-labelledby="tracker-label">
+              <p id="tracker-label" class="tracker-label">How does your heart feel today?</p>
+              <div id="mood-options" role="radiogroup">
+                <button class="mood-btn" data-mood="anxious" role="radio" aria-checked="false">Restless</button>
+                <button class="mood-btn" data-mood="heavy"   role="radio" aria-checked="false">Heavy</button>
+                <button class="mood-btn" data-mood="seeking" role="radio" aria-checked="false">Seeking</button>
+                <button class="mood-btn" data-mood="still"   role="radio" aria-checked="false">Still</button>
+              </div>
+              <!-- FIX: Uses CSS class .visible instead of inline opacity to avoid state conflict -->
+              <div id="mood-response" aria-live="polite" aria-atomic="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 4. PHYSICAL — Breath, Body & Spirit ───────────── -->
+    <section id="physical" class="section" aria-labelledby="physical-heading">
+      <div class="container">
+        <div class="two-col">
+          <!-- Content -->
+          <div class="content-block">
+            <p class="eyebrow reveal">Physical Upgrade</p>
+            <div class="gold-divider"></div>
+            <h2 id="physical-heading" class="serif reveal">Breath, Body,<br>&amp; Spirit</h2>
+            <p class="reveal">
+              The temple of the heart is the body. Physical peace is not just about health — it is the rhythm of movement and the discipline of rest.
+            </p>
+
+            <ul class="pillar-list">
+              <li class="pillar-item reveal">
+                <div class="pillar-number">1</div>
+                <div>
+                  <h4>Cellular Hydration</h4>
+                  <p>Water as a conduit for mental clarity and sustained energy.</p>
+                </div>
+              </li>
+              <li class="pillar-item reveal">
+                <div class="pillar-number">2</div>
+                <div>
+                  <h4>Rhythmic Movement</h4>
+                  <p>Moving the body to release stored tension and reset your nervous system.</p>
+                </div>
+              </li>
+              <li class="pillar-item reveal">
+                <div class="pillar-number">3</div>
+                <div>
+                  <h4>Intentional Rest</h4>
+                  <p>Sleep and stillness are not laziness — they are part of your upgrade protocol.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Breathing Widget -->
+          <div id="breathing-widget" aria-label="Breathing exercise">
+            <div id="breathing-circle" role="img" aria-label="Breathing guide animation">
+              <div class="breathing-ring" aria-hidden="true"></div>
+              <div class="breathing-inner" aria-hidden="true"></div>
+              <!-- FIX: text updated via pure CSS transitions in interactions.js (no gsap dep) -->
+              <span id="breathing-text" aria-live="polite">Inhale</span>
+            </div>
+            <p class="breathing-hint">Sync your breath with the visual pulse</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 5. ROADMAP (FIX: This section was MISSING — nav linked to dead anchor) ── -->
+    <section id="roadmap" class="section" aria-labelledby="roadmap-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow">Your Path Forward</p>
+          <div class="gold-divider"></div>
+          <h2 id="roadmap-heading" class="serif">The Peace Roadmap</h2>
+          <p>Step-by-step integration — emotional, physical, and spiritual</p>
+        </div>
+
+        <div class="roadmap-timeline">
+
+          <div class="roadmap-step reveal">
+            <div class="roadmap-dot">
+              <i data-lucide="compass" style="width:1.1rem;height:1.1rem;"></i>
+            </div>
+            <div class="roadmap-content">
+              <h3>Identify Your Baseline</h3>
+              <p>Use the Mood Tracker and the daily check-in journal to capture where you truly are — without judgment. Awareness is the first upgrade.</p>
+              <span class="roadmap-tag">Week 1</span>
+            </div>
+          </div>
+
+          <div class="roadmap-step reveal">
+            <div class="roadmap-dot">
+              <i data-lucide="wind" style="width:1.1rem;height:1.1rem;"></i>
+            </div>
+            <div class="roadmap-content">
+              <h3>Build the Breath Practice</h3>
+              <p>4-second inhale, hold, 4-second exhale — twice daily. This single habit regulates cortisol, sharpens focus, and anchors you in the present.</p>
+              <span class="roadmap-tag">Week 2</span>
+            </div>
+          </div>
+
+          <div class="roadmap-step reveal">
+            <div class="roadmap-dot">
+              <i data-lucide="heart" style="width:1.1rem;height:1.1rem;"></i>
+            </div>
+            <div class="roadmap-content">
+              <h3>Untangle the Emotional Layer</h3>
+              <p>Map your raw thoughts using the trackers inside this publication. Identify the loop patterns that are costing you energy and replace them with one intentional reframe per day.</p>
+              <span class="roadmap-tag">Week 3</span>
+            </div>
+          </div>
+
+          <div class="roadmap-step reveal">
+            <div class="roadmap-dot">
+              <i data-lucide="zap" style="width:1.1rem;height:1.1rem;"></i>
+            </div>
+            <div class="roadmap-content">
+              <h3>Upgrade the Physical Foundation</h3>
+              <p>Add one rhythm-based movement session per day. Hydrate with intention. Protect 7+ hours of sleep. Physical peace is infrastructure — everything else builds on it.</p>
+              <span class="roadmap-tag">Week 4</span>
+            </div>
+          </div>
+
+          <div class="roadmap-step reveal">
+            <div class="roadmap-dot">
+              <i data-lucide="star" style="width:1.1rem;height:1.1rem;"></i>
+            </div>
+            <div class="roadmap-content">
+              <h3>Protect the Shine</h3>
+              <p>Positive Peace is not a destination — it is a daily decision. Build your morning ritual, guard your energy, and keep upgrading. You do not go back to who you were.</p>
+              <span class="roadmap-tag">Ongoing</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 6. CTA ──────────────────────────────────────────── -->
+    <section id="cta-section" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-card">
+
+          <div class="cta-left">
+            <p class="eyebrow">Ready to Upgrade</p>
+            <div class="gold-divider" style="margin:1rem 0;"></div>
+            <h2 id="cta-heading" class="serif">Own the<br>Experience</h2>
+            <p>
+              This publication is sell-ready. Download the interactive version — all videos, the guided audio meditation, and the complete Peace Roadmap included.
+            </p>
+            <div class="cta-buttons">
+              <button class="btn-primary">
+                <i data-lucide="download" style="width:0.875rem;height:0.875rem;"></i>
+                Instant Download
+              </button>
+              <button class="btn-secondary">View License</button>
+            </div>
+          </div>
+
+          <div class="cta-right">
+            <!-- QR Placeholder — replace with real QR once URL is live -->
+            <div class="qr-wrapper">
+              <svg
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="QR code to preview on mobile"
+              >
+                <!-- Position Detection Patterns -->
+                <rect x="10" y="10" width="20" height="20" stroke="#1A1A1A" stroke-width="4"/>
+                <rect x="15" y="15" width="10" height="10" fill="#1A1A1A"/>
+                <rect x="70" y="10" width="20" height="20" stroke="#1A1A1A" stroke-width="4"/>
+                <rect x="75" y="15" width="10" height="10" fill="#1A1A1A"/>
+                <rect x="10" y="70" width="20" height="20" stroke="#1A1A1A" stroke-width="4"/>
+                <rect x="15" y="75" width="10" height="10" fill="#1A1A1A"/>
+                <!-- Data modules (decorative placeholder) -->
+                <path d="M40 10V40H60V10M40 60V90H90V60H40Z" stroke="#1A1A1A" stroke-width="2"/>
+                <rect x="45" y="15" width="5" height="5" fill="#1A1A1A"/>
+                <rect x="55" y="25" width="5" height="5" fill="#1A1A1A"/>
+                <rect x="65" y="70" width="5" height="5" fill="#1A1A1A"/>
+                <rect x="80" y="80" width="5" height="5" fill="#1A1A1A"/>
+                <rect x="70" y="65" width="5" height="5" fill="#1A1A1A"/>
+              </svg>
+            </div>
+            <div class="qr-label">
+              <p>Scan to Preview on Mobile</p>
+              <p>Mobile-Optimized Interactive Format</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer id="site-footer" role="contentinfo">
+    <img
+      src="https://r2-bucket.flowith.net/f/72514915319a9226/create_brand_logo_design_index_0%402048x2048.jpeg"
+      alt="angieCREATEs logo"
+      loading="lazy"
+      width="80" height="80"
+    >
+    <h2 class="serif">Built with CREATE</h2>
+    <p>Transform your knowledge into interactive, agency-grade digital publications — instantly.</p>
+
+    <div class="footer-links">
+      <a href="https://angiecreates.pro" class="btn-primary">Visit CREATE Hub</a>
+      <a href="#process" class="btn-secondary">Digital Templates</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://instagram.com/angiecreates" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://pinterest.com/angiecreates" target="_blank" rel="noopener">Pinterest</a>
+      <a href="#" target="_blank" rel="noopener">Agency Services</a>
+      <a href="#" target="_blank" rel="noopener">License Info</a>
+    </div>
+
+    <div class="footer-legal">
+      <p>&copy; 2026 angieCREATEs. All rights reserved.</p>
+      <p>Designed by <strong>angieCREATEs</strong> for CREATE Platform</p>
+    </div>
+  </footer>
+
+  <!-- App entrypoint — loaded as ES module -->
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>
